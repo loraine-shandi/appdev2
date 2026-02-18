@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Login from './src/screens/Login';
+import Signup from './src/screens/Signup';
 
 export default function App() {
+  const [page, setPage] = useState('login')
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      {
+        page == 'login' ? <Login/> : <Signup/>
+      }
+    </>
   );
 }
 
@@ -18,3 +23,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
