@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       {
-        page == 'login' ? <Login/> : <Signup/>
+        page == 'login' ? <Login setPage={setPage}/> : <Signup setPage={setPage}/>
       }
     </>
   );

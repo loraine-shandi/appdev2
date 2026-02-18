@@ -1,7 +1,8 @@
 // import {useState} from 'react';
 import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-const Signup = () => {
+const Signup = ({setPage}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -9,16 +10,20 @@ const Signup = () => {
       </View>
       <View style={styles.content}>
         <View style={styles.input}>
-          <Text style={styles.text}>Username</Text>
+            <Ionicons name="person" size={22} color="gray" />
+            <Text style={styles.text}>Username</Text>
         </View>
         
         <View style={styles.input}>
-          <Text style={styles.text}>Email</Text>
+            <Ionicons name="mail-outline" size={22} color="gray" />
+            <Text style={styles.text}>Email</Text>
         </View>
         <View style={styles.input}>
-          <Text style={styles.text}>Password</Text>
+            <Ionicons name="lock-closed-outline" size={22} color="gray" />
+            <Text style={styles.text}>Password</Text>
         </View>
         <View style={styles.input}>
+            <Ionicons name="lock-closed-outline" size={22} color="gray" />
           <Text style={styles.text}>Confirm Password</Text>
         </View>
         
@@ -26,6 +31,10 @@ const Signup = () => {
       <View style={styles.footer}>
         <View style={styles.button}>
             <Text style={styles.textbutton}>Sign Up</Text>
+        </View>
+        <View style={styles.footerFooter}>
+            <Text>Have an Account?</Text>
+            <Text onPress={()=>setPage('login')} style={{marginHorizontal: 10}}>Login</Text>
         </View>
         
       </View>
@@ -53,23 +62,24 @@ const styles = StyleSheet.create({
   footer: {
     flex: 2,
     justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "center",
+    
   },
   signup: { 
     fontSize: 30,
     fontWeight: "bold",
   },
   input: {
+    width:  300,
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    padding: 10,
+    backgroundColor: '#ddd',
+    borderRadius: 10,
+    margin: 4
 
-    borderRadius: 15,
-    height: 50,
-    backgroundColor: "white",
-    borderColor: 'rgb(11, 43, 78)',
-    paddingHorizontal: 15,
-    width: '80%',
-    justifyContent: "center",
-    marginBottom: 15,
-    
   },
   text: {
     fontSize: 16   
@@ -90,6 +100,10 @@ const styles = StyleSheet.create({
   textbutton: {
     fontSize: 20,
     color: "white"
+  },
+  footerFooter:{
+    flexDirection: 'row',
+    marginTop: 20
   }
 });
 
