@@ -3,16 +3,20 @@ import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
+import Todo from './src/screens/Todo';
+
 
 export default function App() {
   const [page, setPage] = useState('login')
   return (
     <>
-      {
+      {/* {
         page == 'login' ? <Login setPage={setPage}/> : <Signup setPage={setPage}/>
-      }
-    </>
-  );
+      } */}
+      <Todo/>
+
+   </>
+  ); 
 }
 
 const styles = StyleSheet.create({
