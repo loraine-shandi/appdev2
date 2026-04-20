@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button } from '@react-navigation/elements';
 
+
 function SettingsScreen({ route }) {
   const { userId } = route.params;
 
@@ -59,6 +60,8 @@ const RootTabs = createBottomTabNavigator({
     More: MoreStack,
   },
 });
+
+
 
 const Navigation = createStaticNavigation(RootTabs);
 
